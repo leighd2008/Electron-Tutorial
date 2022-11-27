@@ -13,7 +13,14 @@ function createWindow () {
     width: 1281,
     height: 800,
     minWidth: 1281,
-    minHeight: 800
+    minHeight: 800,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+      enableRemoteModule: true,
+    },
+    backgroundColor: '#312450',
+    show: false
   })
   
   // and load the index.html of the app.
@@ -26,6 +33,10 @@ function createWindow () {
   mainWindow.on('closed', function () {
     // Dereference the window object, usually you would store windows in an array if your app supports multi windows, this is the time when you should delete the corresponding element.
     mainWindow = null
+  })
+  
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show()
   })
 }
 
