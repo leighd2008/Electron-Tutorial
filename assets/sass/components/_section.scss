@@ -38,4 +38,11 @@
 			margin-top: (_size(element-margin) * -0.3);
 			line-height: 1.5em;
 		}
+    
 	}
+  
+  #wrapper {
+    section {
+      display: none;
+    }
+  }
